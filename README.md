@@ -12,6 +12,7 @@ A GSI Tile Daicho is an SQLite3 database to accelerate the production of
 - table name: cache
 
 ### Table design
+In Sequel, the table design will be described as the following:
 ```ruby
 $db = Sequel.sqlite('daicho.sqlite3')
 unless $db.tables.include?(:cache)
@@ -21,6 +22,12 @@ unless $db.tables.include?(:cache)
     String :md5
     Integer :mtime
     Integer :size
+    Integer :z
+    index :z
+    Integer :x
+    index :x
+    Integer :y
+    index :y
   end
 end
 ```
